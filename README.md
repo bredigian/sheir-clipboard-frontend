@@ -25,5 +25,6 @@ Portapapeles con la funcionalidad de compartir cadenas de textos entre diferente
 ## How to install
 
 1. Clonar el repositorio con `git clone git@github.com:bredigian/sheir-clipboard-frontend.git`.
-2. Ejecutar el archivo `install.sh`, o `install.bat` si tu sistema operativo es Windows.
-3. Ejecutar el archivo `run.sh`, o `run.bat` si tu sistema operativo es Windows.
+2. Cambiar de directorio al recientemente creado mediante `cd sheir-clipboard-frontend`.
+3. Ejecutar el archivo `install.sh`, o `install.bat` si tu sistema operativo es Windows.
+4. Ejecutar el archivo `run.sh`, o `run.bat` si tu sistema operativo es Windows.
