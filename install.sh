@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Clone backend
-git clone https://github.com/bredigian/sheir-clipboard-backend.git
+git clone git@github.com:bredigian/sheir-clipboard-backend.git
 
 # Get local IP address
 LOCAL_IP=$(hostname -I | awk '{print $1}')
