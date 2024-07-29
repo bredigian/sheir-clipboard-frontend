@@ -19,7 +19,7 @@ run_in_background npm run start
 cd ..
 
 # Run frontend
-run_in_background npm run preview
+run_in_background npm run preview --host
 
 # Wait script for commands on second plane
 wait
@@ -27,4 +27,4 @@ wait
 # Get local IP address
 LOCAL_IP=$(hostname -I | awk '{print $1}')
 
-echo "Aplicación corriendo en http://localhost:5174 y http://$LOCAL_IP:5174"
+echo "Aplicación corriendo en http://localhost:4173 y http://$LOCAL_IP:4173"
