@@ -1,30 +1,29 @@
-# React + TypeScript + Vite
+# Sheir Clipboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portapapeles con la funcionalidad de compartir cadenas de textos entre diferentes dispositivos que estén conectados a la misma red.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Frontend:** React, Vite, TailwindCSS, Framer Motion
 
-## Expanding the ESLint configuration
+**Backend:** Node.js, Express, socket.io
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Demo
 
-- Configure the top-level `parserOptions` property like this:
+## Features
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-};
-```
+- Modo light/oscuro
+- Conexiones en tiempo real con Websockets
+- Responsive Design
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Requirements
+
+- Tener instalado Node.js 20 o versiones superiores en tu sistema operativo.
+- Tener instalado Git en tu sistema operativo.
+- Tener conocimiento de manejo de consola/terminal.
+
+## How to install
+
+1. Clonar el repositorio con `git clone git@github.com:bredigian/sheir-clipboard-frontend.git`.
+2. Ejecutar el archivo `install.sh`, o `install.bat` si tu sistema operativo es Windows.
+3. Ejecutar el archivo `run.sh`, o `run.bat` si tu sistema operativo es Windows.
