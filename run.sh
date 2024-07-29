@@ -19,7 +19,7 @@ run_in_background npm run start
 cd ..
 
 # Run frontend
-run_in_background npm run preview --host
+run_in_background npm run preview "--host"
 
 # Wait script for commands on second plane
 wait
