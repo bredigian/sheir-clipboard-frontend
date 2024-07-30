@@ -32,14 +32,14 @@ export const Footer = () => {
   }, []);
 
   return (
-    <footer className='flex w-full items-center justify-center gap-4'>
+    <footer className='flex w-full flex-col items-center justify-center gap-4 sm:flex-row'>
       {ip instanceof Error ? (
         <small>{ip.message}</small>
       ) : (
         <div className='text-primary flex items-center gap-1'>
           <span>Ejecutando en</span>
           <a
-            href={`http://${ip}:5173`}
+            href={`http://${ip}:4173`}
             target='_blank'
             className='hover:underline'
           >
