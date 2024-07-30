@@ -5,7 +5,7 @@ echo "Instalando 'pnpm'..."
 npm install -g pnpm
 
 echo "Instalando PM2..."
-pnpm install -g pm2
+npm install -g pm2
 
 # Stop PM2 processes
 pm2 stop "sheir-frontend"
