@@ -13,13 +13,13 @@ rm -f processes.pid
 
 # Change to backend directory and run
 cd sheir-clipboard-backend
-run_in_background npm run start
+run_in_background pnpm run start
 
 # Back to root
 cd ..
 
 # Run frontend
-run_in_background npm run preview "--host"
+run_in_background pnpm run preview "--host"
 
 # Wait script for commands on second plane
 wait

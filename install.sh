@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Install 'pnpm'
+echo "Instalando 'pnpm'..."
+npm install -g pnpm
+
 # Clone backend
 echo "Descargando backend..."
 git clone git@github.com:bredigian/sheir-clipboard-backend.git
@@ -12,10 +16,10 @@ echo "VITE_WEBSOCKET_API=http://$LOCAL_IP:4096" > .env
 
 # Enter to backend directory , npm install, build, and back to root directory
 echo "Instalando backend..."
-cd sheir-clipboard-backend && npm install && npm run build && cd ..
+cd sheir-clipboard-backend && pnpm install && pnpm run build && cd ..
 
 # Execute npm install and build frontend
 echo "Instalando frontend..."
-npm install && npm run build
+pnpm install && pnpm run build
 
 echo "La aplicación se ha instalado exitosamente. ✅"
