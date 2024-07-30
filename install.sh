@@ -4,6 +4,16 @@
 echo "Instalando 'pnpm'..."
 npm install -g pnpm
 
+echo "Instalando PM2..."
+pnpm install -g pm2
+
+# Stop PM2 processes
+pm2 stop "sheir-frontend"
+pm2 stop "sheir-backend"
+pm2 delete "sheir-frontend"
+pm2 delete "sheir-backend"
+
+
 # Clone or update repository
 clone_or_pull() {
   REPO_URL=$1

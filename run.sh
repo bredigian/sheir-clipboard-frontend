@@ -1,25 +1,14 @@
 #!/bin/bash
 
-# Execute commands on second plane
-run_in_background() {
-  nohup "$@" > "$2" 2>&1 &
-  PID=$!
-  echo $PID >> processes.pid
-  echo "Process $PID running in background..."
-}
-
-# Delete 'processes.pid' if already exists
-rm -f processes.pid
-
 # Change to backend directory and run
 cd sheir-clipboard-backend
-run_in_background pnpm run start backend.log
+pm2 start pnpm --name "sheir-backend" -- run start
 
 # Back to root
 cd ..
 
 # Run frontend
-run_in_background pnpm run preview "--host" frontend.log
+pm2 start pnpm --name "sheir-frontend" -- run preview "--host"
 
 
 # Get local IP address
