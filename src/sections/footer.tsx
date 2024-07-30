@@ -43,7 +43,7 @@ export const Footer = () => {
             target='_blank'
             className='hover:underline'
           >
-            {ip}:5173
+            {ip}:4173
           </a>
         </div>
       )}
