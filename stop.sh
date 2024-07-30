@@ -1,18 +1,9 @@
 #!/bin/bash
 
-# Verify if processes.pid already exists
-if [ ! -f processes.pid ]; then
-  echo "No se encontró el archivo processes.pid. No hay procesos para detener."
-  exit 1
-fi
+pm2 stop "sheir-backend"
+pm2 stop "sheir-frontend"
 
-# Read and kill the processes
-while IFS= read -r pid; do
-  echo "Deteniendo el proceso $pid..."
-  kill $pid
-done < processes.pid
-
-# Delete PIDs file
-rm -f processes.pid
+pm2 delete "sheir-backend"
+pm2 delete "sheir-frontend"
 
 echo "Todos los procesos han sido detenidos."
