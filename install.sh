@@ -4,9 +4,26 @@
 echo "Instalando 'pnpm'..."
 npm install -g pnpm
 
+# Clone or update repository
+clone_or_pull() {
+  REPO_URL=$1
+  DIR_NAME=$2
+
+  if [ -d "$DIR_NAME" ]; then
+    echo "El directorio $DIR_NAME ya existe. Actualizando repositorio..."
+    cd "$DIR_NAME"
+    git pull origin main
+    cd ..
+  } else
+    echo "Clonando $DIR_NAME desde $REPO_URL..."
+    git clone "$REPO_URL"
+  fi
+}
+
+
 # Clone backend
 echo "Descargando backend..."
-git clone git@github.com:bredigian/sheir-clipboard-backend.git
+clone_or_pull "git@github.com:bredigian/sheir-clipboard-backend.git" "sheir-clipboard-backend"
 
 # Get local IP address
 LOCAL_IP=$(hostname -I | awk '{print $1}')
