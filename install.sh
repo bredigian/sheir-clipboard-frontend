@@ -9,7 +9,7 @@ clone_or_pull() {
   REPO_URL=$1
   DIR_NAME=$2
 
-  if [ -d "$DIR_NAME" ]; then
+  if [ -d "$DIR_NAME" ]; then {
     echo "El directorio $DIR_NAME ya existe. Actualizando repositorio..."
     cd "$DIR_NAME"
     git pull origin main
@@ -19,7 +19,6 @@ clone_or_pull() {
     git clone "$REPO_URL"
   fi
 }
-
 
 # Clone backend
 echo "Descargando backend..."
