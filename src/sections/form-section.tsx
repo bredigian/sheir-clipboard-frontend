@@ -1,4 +1,4 @@
-import { connectWebsocket } from '../utils/io';
+import { connectWebsocket } from '../lib/io';
 import { useForm } from 'react-hook-form';
 
 type TClipboardItem = { value: string };
@@ -28,7 +28,7 @@ export const FormAddToClipboardSection = ({ items }: Props) => {
         })}
         autoComplete='off'
         placeholder='Ingresá el texto deseado...'
-        className='w-full p-4 text-center text-3xl text-slate-700 outline-none'
+        className='text-primary bg-primary-foreground w-full p-4 text-center text-3xl outline-none'
       />
       <button type='submit' className='hidden'>
         Submit

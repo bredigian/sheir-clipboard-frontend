@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react';
 
 import { API_URL } from '../const/api';
+import { Switch } from '../components/ui/switch';
+import { useTheme } from '../hooks/use-theme';
 
 type TResponse = { message: string; ip: string };
 
 export const Footer = () => {
+  const { theme, handleChangeTheme } = useTheme();
+
   const [ip, setIp] = useState<string | Error>('');
 
   const getIpAddress = async () => {
@@ -32,7 +36,7 @@ export const Footer = () => {
       {ip instanceof Error ? (
         <small>{ip.message}</small>
       ) : (
-        <div className='flex items-center gap-1 text-slate-700'>
+        <div className='text-primary flex items-center gap-1'>
           <span>Ejecutando en</span>
           <a
             href={`http://${ip}:5173`}
@@ -43,6 +47,10 @@ export const Footer = () => {
           </a>
         </div>
       )}
+      <label className='flex cursor-pointer items-center gap-2'>
+        Modo Dark
+        <Switch defaultChecked={theme === 'dark'} onClick={handleChangeTheme} />
+      </label>
     </footer>
   );
 };

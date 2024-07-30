@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { Footer } from './sections/footer';
 import { FormAddToClipboardSection } from './sections/form-section';
-import { connectWebsocket } from './utils/io';
+import { connectWebsocket } from './lib/io';
 import copy from 'copy-to-clipboard';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';
@@ -34,13 +34,14 @@ export default function Home() {
         {items.map((item, index) => (
           <motion.button
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            animate={{ opacity: 0.75 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             whileTap={{ scale: 0.95 }}
+            whileHover={{ opacity: 1 }}
             onClick={() => copyToClipboard(item.value)}
             key={item.value + `__${index}` + '__key'}
-            className='h-fit max-w-screen-sm overflow-hidden rounded-xl border-2 border-slate-400 p-2 text-xl text-slate-400 duration-200 hover:border-slate-700 hover:text-slate-700'
+            className='border-primary text-primary h-fit max-w-screen-sm overflow-hidden rounded-xl border-2 p-2 text-xl duration-200'
           >
             <p className='whitespace-normal break-words'>{item.value}</p>
           </motion.button>
